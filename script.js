@@ -1,5 +1,4 @@
 const prompt = require('prompt-sync')()
-console.log('Hello!')
 
 //! 1.1
 
@@ -15,11 +14,12 @@ function compare_number(num1, num2) {
 	}
 }
 
-const num1 = prompt('Введіть перше число: ')
-const num2 = prompt('Введіть друге число: ')
-
-const comparisonResult = compare_number(num1, num2)
-console.log(comparisonResult)
+console.log(
+	compare_number(
+		prompt('Введіть перше число: '),
+		prompt('Введіть друге число: ')
+	)
+)
 
 //! 1.2
 
@@ -31,10 +31,7 @@ function verify_pass(password) {
 	}
 }
 
-const password = prompt('Введіть пароль: ')
-
-const verifyPassword = verify_pass(password)
-console.log(verifyPassword)
+console.log(verify_pass(prompt('Введіть пароль: ')))
 
 //! 1.3
 
@@ -46,25 +43,17 @@ function checkEvenOdd(number) {
 	}
 }
 
-const inputNumber = parseInt(prompt('Введіть число: '))
-
-const result = checkEvenOdd(inputNumber)
-console.log(result)
+console.log(checkEvenOdd(parseInt(prompt('Введіть число: '))))
 
 //! 2.1
 
-function isLeapYear(year) {
-	if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
-		return true
-	} else {
-		return false
-	}
-}
+const isLeapYear = year =>
+	(year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
 
 const inputYear = parseInt(prompt('Введіть рік: '))
 
-if (isLeapYear(inputYear)) {
-	console.log(`${inputYear} - високосний рік.`)
-} else {
-	console.log(`${inputYear} - не високосний рік.`)
-}
+console.log(
+	`${inputYear} - ${
+		isLeapYear(inputYear) ? 'високосний' : 'не високосний'
+	} рік.`
+)
