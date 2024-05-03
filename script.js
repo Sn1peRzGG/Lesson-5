@@ -1,4 +1,5 @@
 const prompt = require('prompt-sync')()
+console.log('Hello!')
 
 //! 1.1
 
